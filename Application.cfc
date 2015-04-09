@@ -8,12 +8,13 @@ component {
     this.sessionTimeout = CreateTimeSpan(0, 0, 30, 0); //30 minutes
     this.customTagPaths = [ expandPath('/myAppCustomTags') ];
     this.mappings = {
-        "/core" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/core'),
-        "/controller" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/controller'),
-        "/model" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/model'),
-        "/view" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/view'),
-        "/webroot" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/webroot'),
-        "/config" = expandPath('/desenvolvimento/_PROGRAMACAO/assis/config')
+        "/core" = expandPath('core'),
+        "/controller" = expandPath('controller'),
+        "/model" = expandPath('model'),
+        "/view" = expandPath('view'),
+        "/webroot" = expandPath('webroot'),
+        "/config" = expandPath('config'),
+        "/vendors" = expandPath('vendors')
     };
 
     // see also: http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-750b.html

@@ -12,4 +12,14 @@ component
 
         this.template.controller = this.controller;
     }
+
+    function render(args={})
+    {
+        this.template.render(args);
+    }
+
+    function set(action = this.action, controller = this.controller)
+    {
+        this.template.set(action,controller);
+    }
 }

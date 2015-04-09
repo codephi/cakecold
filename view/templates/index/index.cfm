@@ -1,3 +1,1 @@
-<cfscript>
-    writeOutput(teste);
-</cfscript>
+<h1>Hello World!</h1>

@@ -4,14 +4,9 @@ component
 
     function index()
     {
-//        this.template.render({'teste' = 'ok!'});
+        this.view.render();
     }
 
-    function login(){
-
-//        this.template.set(controller = 'login', action = 'index');
-//        this.template.render({'teste' = 'ok!'});
-    }
 
 
 }
