@@ -1,0 +1,5 @@
+component
+        extends="model.model"
+{
+
+}
