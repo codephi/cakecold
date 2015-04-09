@@ -4,13 +4,13 @@ component
 
     function index()
     {
-        this.template.render({'teste' = 'ok!'});
+//        this.template.render({'teste' = 'ok!'});
     }
 
     function login(){
 
-        this.template.set(controller = 'login', action = 'index');
-        this.template.render({'teste' = 'ok!'});
+//        this.template.set(controller = 'login', action = 'index');
+//        this.template.render({'teste' = 'ok!'});
     }
 
 

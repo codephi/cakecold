@@ -1,57 +1,74 @@
 component
-    extends="core.components.useful"
+        extends="core.components.useful"
 {
-    this.ini = false;
-
     function init()
     {
         this.config = call('config', 'config', true);
 
-        this.controller = structKeyExists(url, 'controller') ? url.controller : this.config.controller;
+        this.config.init();
 
-        this.action = structKeyExists(url, 'action') ? url.action : this.config.action;
+        this.controller = this.config.controller;
 
-        this.template = call('template', 'core.view.components', true);
+        this.action = this.config.action;
 
-        this.template.action = this.action;
-
-        this.template.controller = this.controller;
+        this.mvcInit();
 
         return this;
     }
 
-    function before(){}
-
-    function after(){}
-
-    function beforeRender(){}
-
-    function afterRender(){}
-
-    package function _controller(){
-        $component = createObject('component', 'controller.' & this.controller).init();
-
-        $component.before();
-
-        if (structKeyExists($component, this.action))
-            invoke($component, this.action);
-
-        $component.after();
+    function mvcInit()
+    {
+        if (structKeyExists(this, 'componentType'))
+            switch (this.componentType) {
+                case 'controller':
+                    this.initController();
+                        break;
+                case 'model':
+                    this.initModel();
+                        break;
+                case 'view':
+                    this.initView();
+                        break;
+            }
     }
 
-    package function _model(){
-        $component = createObject('component', 'model.' & this.controller).init();
-
-        $component.before();
-
-        if (structKeyExists($component, this.action))
-            invoke($component, this.action);
-
-        $component.after();
+    function initController()
+    {
+        this._init();
     }
 
-     function start(){
-         _controller();
-         _model();
+    function initModel()
+    {
+        this._init();
     }
+
+    function initView()
+    {
+        this._init();
+    }
+
+    function start()
+    {
+        this.currentController = loadComponent('controller', this.controller);
+        if (structKeyExists(this.currentController, 'error'))
+            debug(this.currentController.error, true);
+    }
+
+    /*
+    * Ghosts methods
+    */
+    function _init()
+    {}
+
+    function before()
+    {}
+
+    function after()
+    {}
+
+    function beforeRender()
+    {}
+
+    function afterRender()
+    {}
 }

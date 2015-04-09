@@ -1,5 +1,5 @@
 component
-        extends="core.model.model"
+        extends="core.view.view"
 {
 
 
