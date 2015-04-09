@@ -10,9 +10,10 @@ component
         this.controller = controller;
     }
 
-    function render($args = {})
+    function render(args = {})
     {
-        extract($args);
+    	if(structCount(args))
+        	extract(args);        	
 
         this.localTemplate = '/view/templates/' & this.controller & '/' & this.action & '.cfm';
 

@@ -20,7 +20,7 @@ component {
     // see also: http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSED380324-6CBE-47cb-9E5E-26B66ACA9E81.html
 
     function onApplicationStart() {
-        application.dsn = 'intranet';
+        application.dsn = 'intranet';        
         return true;
     }
 
@@ -32,12 +32,14 @@ component {
         if( structKeyExists(url,'reinicia')){
             onApplicationStart();
         }
+        
+        new core.app().start();
     }
 
     function onRequest( string targetPage ) {
         include arguments.targetPage;
     }
-
+		
     function onRequestEnd() {}
 
     function onSessionEnd( struct SessionScope, struct ApplicationScope ) {}

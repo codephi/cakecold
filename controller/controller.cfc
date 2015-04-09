@@ -1,5 +1,5 @@
 component
-        extends="core.app"
+        extends="core.controller.controller"
 {
 
 }

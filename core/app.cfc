@@ -1,5 +1,5 @@
 component
-    extends="core.useful"
+    extends="core.components.useful"
 {
     this.ini = false;
 
@@ -34,7 +34,7 @@ component
         $component.before();
 
         if (structKeyExists($component, this.action))
-        invoke($component, this.action);
+            invoke($component, this.action);
 
         $component.after();
     }
